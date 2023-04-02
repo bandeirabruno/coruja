@@ -1,0 +1,74 @@
+[19-Dec-2019 08:01:30 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:137
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 137
+[19-Dec-2019 08:07:08 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:137
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 137
+[19-Dec-2019 08:07:39 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:137
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 137
+[19-Dec-2019 08:15:18 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:138
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 138
+[19-Dec-2019 08:15:23 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:138
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 138
+[19-Dec-2019 08:20:52 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:138
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 138
+[19-Dec-2019 08:27:00 America/Fortaleza] PHP Fatal error:  Uncaught Exception: IllegalStateException in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:138
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(55): ItemCriterioAvaliacao->obterItemNotaDesteCriterio(Array)
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacao.php(140): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(158): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 138
+[19-Dec-2019 08:32:57 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function getComentario() on null in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:128
+Stack trace:
+#0 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacaoLancarNotas.php(193): ItemCriterioAvaliacao->exibirComentario(Object(Inscricao))
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(36): include('/home/faete395/...')
+#2 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 128
+[19-Dec-2019 08:42:15 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function getComentario() on null in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:128
+Stack trace:
+#0 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacaoLancarNotas.php(193): ItemCriterioAvaliacao->exibirComentario(Object(Inscricao))
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(36): include('/home/faete395/...')
+#2 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 128
+[19-Dec-2019 08:44:13 America/Fortaleza] PHP Fatal error:  Uncaught Error: Class 'ItemCriterioAvaliacaoInscricaoNota' not found in /home/faete395/public_html/coruja/classes/Inscricao.php:1020
+Stack trace:
+#0 /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php(53): Inscricao->obterItensCriterioAvaliacaoInscricaoNota()
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacaoLancarNotas.php(172): ItemCriterioAvaliacao->exibir(Object(Inscricao))
+#2 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(36): include('/home/faete395/...')
+#3 {main}
+  thrown in /home/faete395/public_html/coruja/classes/Inscricao.php on line 1020
+[19-Dec-2019 08:52:10 America/Fortaleza] PHP Fatal error:  Uncaught Error: Call to a member function getComentario() on null in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php:128
+Stack trace:
+#0 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/formPautaEletronicaAvaliacaoLancarNotas.php(193): ItemCriterioAvaliacao->exibirComentario(Object(Inscricao))
+#1 /home/faete395/public_html/coruja/espacoProfessor/pautaEletronica/pautaEletronicaAvaliacao_controle.php(145): include('/home/faete395/...')
+#2 {main}
+  thrown in /home/faete395/public_html/coruja/classes/ItemCriterioAvaliacao.php on line 128

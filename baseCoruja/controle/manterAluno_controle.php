@@ -15,7 +15,7 @@ $acao = $_REQUEST["acao"];
 
 if($acao === "consultar") 
 {
-    // Verifica antes se login tem permissão
+    // Verifica antes se login tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_CONSULTAR)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -25,7 +25,7 @@ if($acao === "consultar")
 } 
 else if($acao === "buscaAluno") 
 {
-    // Verifica antes se login tem permissão
+    // Verifica antes se login tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_CONSULTAR)) {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
@@ -40,7 +40,7 @@ else if($acao === "buscaAluno")
 
     $retornaBusca = new BuscaAluno();
 
-    // Monta a visão dinamicamente
+    // Monta a visï¿½o dinamicamente
     require_once("$BASE_DIR/includes/topo.php");
     echo '<div id="menuprincipal">';
     require_once("$BASE_DIR/includes/menu_horizontal.php");
@@ -53,7 +53,7 @@ else if($acao === "buscaAluno")
 } 
 else if($acao=="novoCadastro") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_INSERIR)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -64,7 +64,7 @@ else if($acao=="novoCadastro")
 } 
 else if($acao=="exibirAluno") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_CONSULTAR)) {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
@@ -73,7 +73,7 @@ else if($acao=="exibirAluno")
 } 
 else if( $acao === "salvarNovoAluno") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_INSERIR)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -81,7 +81,7 @@ else if( $acao === "salvarNovoAluno")
     $formAluno = new ManterAlunoForm();
     $formAluno->atualizarDadosForm();
 
-    // Validações
+    // Validaï¿½ï¿½es
     $msgsErro = $formAluno->validarDados();
     if( count($msgsErro) != 0 ) {
         require_once("$BASE_DIR/baseCoruja/formularios/novoAluno.php");
@@ -90,7 +90,7 @@ else if( $acao === "salvarNovoAluno")
 
     $con = BD::conectar();
     try {
-        BD::mysqli_query("BEGIN", $con); // Inicia transação
+        BD::mysqli_query("BEGIN", $con); // Inicia transaï¿½ï¿½o
 
         $idPessoa = Pessoa::inserirPessoa($formAluno->nome, $formAluno->sexo, $formAluno->enderecoLogradouro,
             $formAluno->enderecoNumero, $formAluno->enderecoComplemento,
@@ -196,7 +196,7 @@ else if( $acao === "salvarNovoAluno")
 } 
 else if( $acao === "preparaEdicaoAluno") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_EDITAR)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -212,7 +212,7 @@ else if( $acao === "preparaEdicaoAluno")
 } 
 else if( $acao === "salvarAlunoEditado") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_EDITAR)) {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
@@ -231,7 +231,7 @@ else if( $acao === "salvarAlunoEditado")
     $con = BD::conectar();
     try 
     {
-        BD::mysqli_query("BEGIN", $con); // Inicia transação
+        BD::mysqli_query("BEGIN", $con); // Inicia transaï¿½ï¿½o
 
         $alunoAntes = Aluno::getAlunoByIdPessoa($idPessoa);
 
@@ -336,7 +336,7 @@ else if( $acao === "salvarAlunoEditado")
 } 
 else if( $acao === "preparaEdicaoMatricula") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_EDITAR_MATRICULA)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -352,7 +352,7 @@ else if( $acao === "preparaEdicaoMatricula")
 } 
 else if( $acao === "mudarCursoMatricula") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_EDITAR_MATRICULA)) {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
@@ -363,7 +363,7 @@ else if( $acao === "mudarCursoMatricula")
 } 
 else if( $acao === "salvarMatriculaEditada") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_EDITAR_MATRICULA)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -380,7 +380,7 @@ else if( $acao === "salvarMatriculaEditada")
 
     $con = BD::conectar();
     try {
-        BD::mysqli_query("BEGIN", $con); // Inicia transação
+        BD::mysqli_query("BEGIN", $con); // Inicia transaï¿½ï¿½o
 
         if($formMatricula->modo=="edicao") {
 
@@ -411,33 +411,33 @@ else if( $acao === "salvarMatriculaEditada")
                 $con);
         }
 
-        // Salvar log de alteração ou criação de matrícula
+        // Salvar log de alteraï¿½ï¿½o ou criaï¿½ï¿½o de matrï¿½cula
         $strLog="";
         $uc="";
         $aluno = Aluno::getAlunoByIdPessoa($idPessoa);
         $nome = $aluno->getNome();
         if($formMatricula->modo=="edicao") {
-            $strLog .= "Matrícula do aluno $nome alterada<br/>";
-            $strLog .= "Matrícula anterior: " . $formMatricula->matriculaAlunoAntiga . "<br/>";
+            $strLog .= "Matrï¿½cula do aluno $nome alterada<br/>";
+            $strLog .= "Matrï¿½cula anterior: " . $formMatricula->matriculaAlunoAntiga . "<br/>";
             $uc = $MANTER_ALUNO_EDITAR_MATRICULA;
         } else {
-            $strLog="Matrícula do aluno $nome inserida.<br/>";
+            $strLog="Matrï¿½cula do aluno $nome inserida.<br/>";
             $uc = $MANTER_ALUNO_INCLUIR_MATRICULA;
         }
-        $strLog .= "Matrícula: " . $formMatricula->matriculaAlunoNova . "<br/>";
+        $strLog .= "Matrï¿½cula: " . $formMatricula->matriculaAlunoNova . "<br/>";
         $strLog .= "Curso: " . $formMatricula->siglaCurso . "<br/>";
         $strLog .= "Turno: " . $formMatricula->turnoIngresso . "<br/>";
-        $strLog .= "Data da matrícula: " . $formMatricula->dataMatriculaD .
+        $strLog .= "Data da matrï¿½cula: " . $formMatricula->dataMatriculaD .
                 "/" . $formMatricula->dataMatriculaM . "/"
                 . $formMatricula->dataMatriculaA . "<br/>";
         if($formMatricula->modo=="edicao") {
             $pl = PeriodoLetivo::obterPeriodoLetivo($formMatricula->idPeriodoLetivo);
-            $strLog .= "Período Letivo: " . $pl->getSiglaPeriodoLetivo() . "<br/>";
+            $strLog .= "Perï¿½odo Letivo: " . $pl->getSiglaPeriodoLetivo() . "<br/>";
             $matriz = MatrizCurricular::obterMatrizCurricular($formMatricula->siglaCurso, $formMatricula->idMatriz);
             $strLog .= "Matriz: " . Util::dataSQLParaBr($matriz->getDataInicioVigencia()) . "<br/>";
         }
         $strLog .= "Concurso Pontos: " . $formMatricula->concursoPontos . "<br/>";
-        $strLog .= "Concurso Classificação: " . $formMatricula->concursoClassificacao . "<br/>";
+        $strLog .= "Concurso Classificaï¿½ï¿½o: " . $formMatricula->concursoClassificacao . "<br/>";
         $formaIngresso = FormaIngresso::getFormaIngressoById($formMatricula->idFormaIngresso);
         $strLog .= "Forma Ingresso: " . $formaIngresso->getDescricao() . "<br/>";
         $login->incluirLog($uc,  $strLog, $con);
@@ -455,17 +455,17 @@ else if( $acao === "salvarMatriculaEditada")
 
     // Exibe mensagem de sucesso e remete para consulta ao aluno
     $msgs=array();
-    $msgOK = $formMatricula->modo=="edicao" ? "Matrícula alterada com sucesso." :"Matrícula criada com sucesso.";
+    $msgOK = $formMatricula->modo=="edicao" ? "Matrï¿½cula alterada com sucesso." :"Matrï¿½cula criada com sucesso.";
     array_push($msgs, $msgOK);
     $_REQUEST["idPessoa"] = $idPessoa;
-    $_REQUEST["aba"] = 7; // exibe aba de matrícula
+    $_REQUEST["aba"] = 7; // exibe aba de matrï¿½cula
     require_once("$BASE_DIR/baseCoruja/formularios/exibe_cad_aluno.php");
     exit;
 
 } 
 else if( $acao === "preparaNovaMatricula") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_INCLUIR_MATRICULA)) {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
@@ -476,7 +476,7 @@ else if( $acao === "preparaNovaMatricula")
 } 
 else if( $acao === "mudarSituacaoDocEntregue") 
 {
-    // Verifica antes se usuário tem permissão
+    // Verifica antes se usuï¿½rio tem permissï¿½o
     if(!$login->temPermissao($MANTER_ALUNO_MUDAR_SITUACAO_DOC_ENTREGUE)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
@@ -493,13 +493,13 @@ else if( $acao === "mudarSituacaoDocEntregue")
 
     try 
     {
-        BD::mysqli_query("BEGIN", $con); // Inicia transação
+        BD::mysqli_query("BEGIN", $con); // Inicia transaï¿½ï¿½o
         ExigeDocumento::mudarSituacaoDocEntregue($matriculaAluno,$siglaCurso,$idTipoDocumento,$situacaoDocEntregue,$con);
 
         $tipoDocumento = TipoDocumento::obterTipoDocumentoPorId($idTipoDocumento);
         $descricaoDocumento = $tipoDocumento->getDescricao();
-        $strLog="Alterada a situação de Docs.Entregue, " .
-        "da matrícula $matriculaAluno, curso $siglaCurso, documento $descricaoDocumento, para $situacaoDocEntregue.";
+        $strLog="Alterada a situaï¿½ï¿½o de Docs.Entregue, " .
+        "da matrï¿½cula $matriculaAluno, curso $siglaCurso, documento $descricaoDocumento, para $situacaoDocEntregue.";
         $login->incluirLog($MANTER_ALUNO_MUDAR_SITUACAO_DOC_ENTREGUE,  $strLog, $con);
 
         BD::mysqli_query("COMMIT", $con);
@@ -512,11 +512,11 @@ else if( $acao === "mudarSituacaoDocEntregue")
         require_once("$BASE_DIR/baseCoruja/formularios/exibe_cad_aluno.php");
         exit;
     }
-    echo "<html><head><script>window.alert('Situação Doc.Entregue alterada com sucesso.');</script><meta http-equiv='refresh' content='0;URL=/coruja/baseCoruja/controle/manterAluno_controle.php?acao=exibirAluno&aba=8&idPessoa=$idPessoa'/></head>";
+    echo "<html><head><script>window.alert('Situaï¿½ï¿½o Doc.Entregue alterada com sucesso.');</script><meta http-equiv='refresh' content='0;URL=/coruja/baseCoruja/controle/manterAluno_controle.php?acao=exibirAluno&aba=8&idPessoa=$idPessoa'/></head>";
     exit;
 
 } 
 else 
 {
-    trigger_error("Ação não identificada.",E_USER_ERROR);
+    trigger_error("Aï¿½ï¿½o nï¿½o identificada.",E_USER_ERROR);
 }

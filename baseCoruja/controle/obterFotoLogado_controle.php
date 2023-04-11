@@ -6,7 +6,7 @@ $login = $_SESSION["login"];
 
 if( $login->getFoto() == null) 
 {
-    readfile("$BASE_DIR/imagens/sem_foto.jpg");
+    readfile("$BASE_DIR/imagens/sem_foto.png");
 } 
 else 
 {

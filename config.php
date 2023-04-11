@@ -13,29 +13,29 @@ class Config {
     const EMAIL_USUARIO = "email";
     const EMAIL_SENHA = 'senha';
     
-    const ADMINISTRADOR_ID_PESSOA = 1029; // Login ao qual ficará associado logs de administração
-    const SECRETARIA_ID_PESSOA = 1030; // Id pessoa que recebe mensagens da secretaria acadêmica
-    const MAX_SOLICS_POR_ALUNO = 8; //CONTROLA A QUANTIDADE DE SOLICITAÇÕES
+    const ADMINISTRADOR_ID_PESSOA = 1029; // Login ao qual ficarï¿½ associado logs de administraï¿½ï¿½o
+    const SECRETARIA_ID_PESSOA = 1030; // Id pessoa que recebe mensagens da secretaria acadï¿½mica
+    const MAX_SOLICS_POR_ALUNO = 8; //CONTROLA A QUANTIDADE DE SOLICITAï¿½ï¿½ES
     const QTDE_EMAILS_POR_LOTE = 50;
     const DIR_AREA_DADOS="/var/coruja_dados"; // dir. para armazenamento de arquivos diversos
     
-    const INSTITUICAO_NOME_COMPLETO = "FACULDADE DE EDUCAÇÃO TECNOLÓGICA DO ESTADO DO RIO DE JANEIRO FERNANDO MOTA";
+    const INSTITUICAO_NOME_COMPLETO = "FACULDADE DE EDUCAï¿½ï¿½O TECNOLï¿½GICA DO ESTADO DO RIO DE JANEIRO FERNANDO MOTA";
     const INSTITUICAO_FILIACAO_1 = "GOVERNO DO ESTADO DO RIO DE JANEIRO";
-    const INSTITUICAO_FILIACAO_2 = "SECRETARIA DE ESTADO DE CIÊNCIA, TECNOLOGIA E INOVAÇÃO";
-    const INSTITUICAO_FILIACAO_3 = "FUNDAÇÃO DE APOIO A ESCOLA TÉCNICA - FAETEC";    
+    const INSTITUICAO_FILIACAO_2 = "SECRETARIA DE ESTADO DE CIï¿½NCIA, TECNOLOGIA E INOVAï¿½ï¿½O";
+    const INSTITUICAO_FILIACAO_3 = "FUNDAï¿½ï¿½O DE APOIO A ESCOLA Tï¿½CNICA - FAETEC";    
     const INSTITUICAO_NOME_CURTO = "FAETERJ - RIO";
-    const INSTITUICAO_ENDERECO="Rua Clarimundo de Melo, 847 - Quintino Bocaiúva - RJ - CEP 21311-281";
+    const INSTITUICAO_ENDERECO="Rua Clarimundo de Melo, 847 - Quintino Bocaiï¿½va - RJ - CEP 21311-281";
     const INSTITUICAO_TELEFONE="Telefone: (21) 2332-4048"; 
     
     /*
      * <sigla_curso_1>,<id_regra_bloqueio_1>[,<id_regra_bloqueio_2>]...;<sigla_curso_2>,<id_regra_bloqueio_1>[,<id_regra_bloqueio_2>]...
-     * ExcedeuTempoMaximoCurso: matrícula não pode exceder o tempo máximo de integralização permitido para o curso
-     * ReprovadoDuasVezes: matrícula com ao menos duas reprovações no mesmo componente e ainda pendente
+     * ExcedeuTempoMaximoCurso: matrï¿½cula nï¿½o pode exceder o tempo mï¿½ximo de integralizaï¿½ï¿½o permitido para o curso
+     * ReprovadoDuasVezes: matrï¿½cula com ao menos duas reprovaï¿½ï¿½es no mesmo componente e ainda pendente
      */
     const BLOQUEIO_AUTOMATICO = "TASI,ExcedeuTempoMaximoCurso,ReprovadoDuasVezes;PGTIAE,ReprovadoDuasVezes";
 }
     
-    /** Constantes para as funcionalidades da aplicação  NORT*/
+    /** Constantes para as funcionalidades da aplicaï¿½ï¿½o  NORT*/
     $EMITIR_HISTORICO="UC01.02.00";
     $MANTER_TURMAS="UC01.03.00";
     $EDITAR_TURMA="UC01.03.01";
@@ -50,7 +50,7 @@ class Config {
     $EDITAR_NOTAS_E_SITUACAO_DO_ALUNO_EM_TURMA="UC01.08.01";
     $EMITIR_FICHA_DE_MATRICULA="UC01.09.00";
 	
-    /** Constantes para as funcionalidades da aplicação  SIRO */
+    /** Constantes para as funcionalidades da aplicaï¿½ï¿½o  SIRO */
     $MANTER_PERIODO_LETIVO="UC02.02.00";
     $MANTER_PERIODO_LETIVO_INCLUIR="UC02.02.03";
     $MANTER_ALUNOS_QUE_CURSAM_TURMA="UC02.07.00";
@@ -62,7 +62,7 @@ class Config {
     $MANTER_SITUACAO_INSCRICOES_TURMAS="UC02.01.00";
     $DEFERIR_SOLICATACAO_INSCRICAO_JUSTIFICATIVA="UC02.01.01";
     $INDEFERIR_SOLICATACAO_INSCRICAO="UC02.01.02";
-    $CANCELAR_SOLICATAÇÃO_INSCRICAO="UC02.01.03";
+    $CANCELAR_SOLICATAï¿½ï¿½O_INSCRICAO="UC02.01.03";
     $MANTER_EVENTOS_PERIODO_LETIVO="UC02.02.01";
     $INCLUIR_EVENTOS_PERIODO_LETIVO="UC02.02.01.00";
     $ALTERAR_EVENTOS_PERIODO_LETIVO="UC02.02.01.01";
@@ -72,7 +72,7 @@ class Config {
     $EXCLUIR_PERIODO_LETIVO="UC02.02.05";
     $EXIBIR_RESULTADO_SOLICITACAO_INSCRICAO="UC02.03.00";
 
-    /** Constantes para as funcionalidades da aplicação INTERNO */
+    /** Constantes para as funcionalidades da aplicaï¿½ï¿½o INTERNO */
     $MANTER_ALUNO_CONSULTAR="UC01.01.00";
     $MANTER_ALUNO_INSERIR="UC01.01.01";
     $MANTER_ALUNO_EDITAR="UC01.01.02";

@@ -1,6 +1,6 @@
 <?php
 /**
- * Descrição da classe Aluno
+ * Descriï¿½ï¿½o da classe Aluno
  *
  * Utilizada para representar objetos Alunos
  */
@@ -62,7 +62,7 @@ class Aluno extends Pessoa {
     private $certificadoReservistaCSM;
 
 
-    /* Métodos de manipulação de dados */
+    /* Mï¿½todos de manipulaï¿½ï¿½o de dados */
 
     protected function carregaDadosAluno($idPessoa) {
         $con = BD::conectar();
@@ -150,7 +150,7 @@ class Aluno extends Pessoa {
     public static function getAlunoByIdPessoa($idPessoa) {
 
         $aluno = new Aluno();
-        //é necessário manter esta ordem para carregar os dados
+        //ï¿½ necessï¿½rio manter esta ordem para carregar os dados
         $aluno->carregaDadosAluno($idPessoa); 
         $aluno->carregaDadosPessoa($idPessoa);
 
@@ -158,11 +158,11 @@ class Aluno extends Pessoa {
 
     }
 
-    /* Obtem um objeto aluno pelo numero de sua matrícula
+    /* Obtem um objeto aluno pelo numero de sua matrï¿½cula
      *
      * Casos de uso:
-     *      UC01.02.00 - Histórico Escolar
-     *      UC01.09.00 - Emitir Ficha de Matrícula
+     *      UC01.02.00 - Histï¿½rico Escolar
+     *      UC01.09.00 - Emitir Ficha de Matrï¿½cula
      *
      * @author: Marcelo Atie
      * @result: objeto aluno
@@ -183,7 +183,7 @@ class Aluno extends Pessoa {
 
         //retorna o Aluno completo
         $aluno = new Aluno();
-        //é necessário manter esta ordem para carregar os dados
+        //ï¿½ necessï¿½rio manter esta ordem para carregar os dados
         $aluno->carregaDadosAluno($idPessoa);
         $aluno->carregaDadosPessoa($idPessoa);
 
@@ -822,77 +822,51 @@ class Aluno extends Pessoa {
      * @param certificadoReservistaCAT
      * @param certificadoReservistaRM
      * @param certificadoReservistaCSM
-     * @param con Indica uma conexão ativa, para participar de transação
+     * @param con Indica uma conexï¿½o ativa, para participar de transaï¿½ï¿½o
      * @result void
      **/
     
-    public static function atualizar( $idPessoa, $nomeMae, $rgMae, $nomePai, $rgPai, $rgNumero,
-        $rgDataEmissao, $rgOrgaoEmissor, $cpf, $cpfProprio, $certidaoNascimentoNumero,
-        $certidaoNascimentoLivro, $certidaoNascimentoFolha, $certidaoNascimentoCidade,
-        $certidaoNascimentoSubdistrito, $certidaoNascimentoUF, $certidaoCasamentoNumero,
-        $certidaoCasamentoLivro, $certidaoCasamentoFolha, $certidaoCasamentoCidade,
-        $certidaoCasamentoSubdistrito, $certidaoCasamentoUF, $estabCursoOrigem, $estabCursoOrigemCidade, $estabCursoOrigemUF,
-        $cursoOrigemAnoConclusao, $modalidadeCursoOrigem, $ctps, $corRaca, $estadoCivil, $deficienciaVisual,
-        $deficienciaMotora, $deficienciaAuditiva, $deficienciaMental, $responsavelLegal, $rgResponsavel,
-        $tituloEleitorNumero, $tituloEleitorData, $tituloEleitorZona, $tituloEleitorSecao,
-        $certificadoAlistamentoMilitarNumero, $certificadoAlistamentoMilitarSerie,
-        $certificadoAlistamentoMilitarData, $certificadoAlistamentoMilitarRM,
-        $certificadoAlistamentoMilitarCSM, $certificadoReservistaNumero, $certificadoReservistaSerie,
-        $certificadoReservistaData, $certificadoReservistaCAT, $certificadoReservistaRM,
-        $certificadoReservistaCSM, $con = null ) {
+    public static function atualizarAluno( 
+        $idPessoa, $nomeMae, $rgMae, 
+        $nomePai, $rgPai, $rgNumero,
+        $rgDataEmissao, $rgOrgaoEmissor, $cpf, 
+        $cpfProprio, $certidaoNascimentoNumero,$certidaoNascimentoLivro, 
+        $certidaoNascimentoFolha, $certidaoNascimentoCidade,$certidaoNascimentoSubdistrito, 
+        $certidaoNascimentoUF, $certidaoCasamentoNumero,$certidaoCasamentoLivro, 
+        $certidaoCasamentoFolha, $certidaoCasamentoCidade,$certidaoCasamentoSubdistrito, 
+        $certidaoCasamentoUF, $estabCursoOrigem, $estabCursoOrigemCidade, 
+        $estabCursoOrigemUF,$cursoOrigemAnoConclusao, $modalidadeCursoOrigem, 
+        $ctps, $corRaca, $estadoCivil, 
+        $deficienciaVisual,$deficienciaMotora, $deficienciaAuditiva, 
+        $deficienciaMental, $responsavelLegal, $rgResponsavel,
+        $tituloEleitorNumero, $tituloEleitorData, $tituloEleitorZona, 
+        $tituloEleitorSecao,$certificadoAlistamentoMilitarNumero, $certificadoAlistamentoMilitarSerie,
+        $certificadoAlistamentoMilitarData, $certificadoAlistamentoMilitarRM,$certificadoAlistamentoMilitarCSM, 
+        $certificadoReservistaNumero, $certificadoReservistaSerie,$certificadoReservistaData, 
+        $certificadoReservistaCAT, $certificadoReservistaRM,$certificadoReservistaCSM, 
+        $con = null ) {
 
         if($con==null){ $con = BD::conectar(); }
 
         $query=sprintf("UPDATE Aluno set
-            `nomeMae`='%s',
-            `rgMae`='%s',
-            `nomePai`='%s',
-            `rgPai`='%s',
-            `rgNumero`='%s',
-            `rgDataEmissao`='%s',
-            `rgOrgaoEmissor`='%s',
-            `cpf`='%s',
-            `cpfProprio`='%s',
-            `certidaoNascimentoNumero`='%s',
-            `certidaoNascimentoLivro`='%s',
-            `certidaoNascimentoFolha`='%s',
-            `certidaoNascimentoCidade`='%s',
-            `certidaoNascimentoSubdistrito`='%s',
-            `certidaoNascimentoUF`='%s',
-            `certidaoCasamentoNumero`='%s',
-            `certidaoCasamentoLivro`='%s',
-            `certidaoCasamentoFolha`='%s',
-            `certidaoCasamentoCidade`='%s',
-            `certidaoCasamentoSubdistrito`='%s',
-            `certidaoCasamentoUF`='%s',
-            `estabCursoOrigem`='%s',
-            `estabCursoOrigemCidade`='%s',
-            `estabCursoOrigemUF`='%s',
-            `cursoOrigemAnoConclusao`=%d,
-            `modalidadeCursoOrigem`='%s',
-            `ctps`='%s',
-            `corRaca`='%s',
-            `estadoCivil`='%s',
-            `deficienciaVisual`='%s',
-            `deficienciaMotora`='%s',
-            `deficienciaAuditiva`='%s',
-            `deficienciaMental`='%s',
-            `responsavelLegal`='%s',
-            `rgResponsavel`='%s',
-            `tituloEleitorNumero`='%s',
-            `tituloEleitorData`=%s,
-            `tituloEleitorZona`='%s',
-            `tituloEleitorSecao`='%s',
-            `certificadoAlistamentoMilitarNumero`='%s',
-            `certificadoAlistamentoMilitarSerie`='%s',
-            `certificadoAlistamentoMilitarData`=%s,
-            `certificadoAlistamentoMilitarRM`='%s',
-            `certificadoAlistamentoMilitarCSM`='%s',
-            `certificadoReservistaNumero`='%s',
-            `certificadoReservistaSerie`='%s',
-            `certificadoReservistaData`=%s,
-            `certificadoReservistaCAT`='%s',
-            `certificadoReservistaRM`='%s',
+            `nomeMae`='%s',`rgMae`='%s',`nomePai`='%s',
+            `rgPai`='%s',`rgNumero`='%s',`rgDataEmissao`='%s',
+            `rgOrgaoEmissor`='%s',`cpf`='%s',`cpfProprio`='%s',
+            `certidaoNascimentoNumero`='%s',`certidaoNascimentoLivro`='%s',`certidaoNascimentoFolha`='%s',
+            `certidaoNascimentoCidade`='%s',`certidaoNascimentoSubdistrito`='%s',`certidaoNascimentoUF`='%s',
+            `certidaoCasamentoNumero`='%s',`certidaoCasamentoLivro`='%s',`certidaoCasamentoFolha`='%s',
+            `certidaoCasamentoCidade`='%s',`certidaoCasamentoSubdistrito`='%s',`certidaoCasamentoUF`='%s',
+            `estabCursoOrigem`='%s',`estabCursoOrigemCidade`='%s',`estabCursoOrigemUF`='%s',
+            `cursoOrigemAnoConclusao`=%d,`modalidadeCursoOrigem`='%s',`ctps`='%s',
+            `corRaca`='%s',`estadoCivil`='%s',`deficienciaVisual`='%s',
+            `deficienciaMotora`='%s',`deficienciaAuditiva`='%s',`deficienciaMental`='%s',
+            `responsavelLegal`='%s',`rgResponsavel`='%s',`tituloEleitorNumero`='%s',
+            `tituloEleitorData`=%s,`tituloEleitorZona`='%s',`tituloEleitorSecao`='%s',
+            `certificadoAlistamentoMilitarNumero`='%s',`certificadoAlistamentoMilitarSerie`='%s',
+            `certificadoAlistamentoMilitarData`=%s,`certificadoAlistamentoMilitarRM`='%s',
+            `certificadoAlistamentoMilitarCSM`='%s',`certificadoReservistaNumero`='%s',
+            `certificadoReservistaSerie`='%s',`certificadoReservistaData`=%s,
+            `certificadoReservistaCAT`='%s',`certificadoReservistaRM`='%s',
             `certificadoReservistaCSM`='%s'
             where idPessoa=%d",
             mysqli_real_escape_string($con, $nomeMae),
@@ -956,7 +930,7 @@ class Aluno extends Pessoa {
     /***
      * Busca por um aluno por CPF
      * @param cpf String com o cpf do aluno
-     * @result new Aluno, ou null, se não encontrar
+     * @result new Aluno, ou null, se nï¿½o encontrar
      **/
     public static function obterAlunoPorCPF( $cpf ) {
 
@@ -979,9 +953,9 @@ class Aluno extends Pessoa {
     }
 
     /**
-     * Este método trás alguns dados pertinentes aos alunos na consulta do histórico de concluites por nome
+     * Este mï¿½todo trï¿½s alguns dados pertinentes aos alunos na consulta do histï¿½rico de concluites por nome
      * 06/12/2010
-     * Vinícius
+     * Vinï¿½cius
      * @param <type> $nome
      * @return array
      */
@@ -995,7 +969,7 @@ class Aluno extends Pessoa {
             ON(MatriculaAluno.idPessoa = Pessoa.idPessoa)
             where nome like '%s%%'", mysqli_real_escape_string($con, $nome));
         $result = BD::mysqli_query($query,$con);
-        if(!$result) trigger_error("Não foi possível executar consulta ao banco.",E_USER_ERROR);
+        if(!$result) trigger_error("Nï¿½o foi possï¿½vel executar consulta ao banco.",E_USER_ERROR);
 
         $col = array();
         if (mysqli_num_rows($result) > 0) {
@@ -1015,7 +989,7 @@ class Aluno extends Pessoa {
     }
 
     /**
-     * Gera uma versão legível do estado desse objeto. Usado para inserir
+     * Gera uma versï¿½o legï¿½vel do estado desse objeto. Usado para inserir
      * log de auditoria.
      * @return String
      */
@@ -1024,13 +998,13 @@ class Aluno extends Pessoa {
         // Dados de Pessoa
         $str .= sprintf("Nome: %s<br/>",$this->getNome());
         $str .= sprintf("Sexo: %s<br/>",$this->getSexo());
-        $str .= sprintf("Endereço Logradouro: %s<br/>",$this->getEnderecoLogradouro());
-        $str .= sprintf("Endereço Número: %s<br/>",$this->getEnderecoNumero());
-        $str .= sprintf("Endereço Complemento: %s<br/>",$this->getEnderecoComplemento());
-        $str .= sprintf("Endereço Bairro: %s<br/>",$this->getEnderecoBairro());
-        $str .= sprintf("Endereço Município: %s<br/>",$this->getEnderecoMunicipio());
-        $str .= sprintf("Endereço Estado: %s<br/>",$this->getEnderecoEstado());
-        $str .= sprintf("Endereço CEP: %s<br/>",$this->getEnderecoCEP());
+        $str .= sprintf("Endereï¿½o Logradouro: %s<br/>",$this->getEnderecoLogradouro());
+        $str .= sprintf("Endereï¿½o Nï¿½mero: %s<br/>",$this->getEnderecoNumero());
+        $str .= sprintf("Endereï¿½o Complemento: %s<br/>",$this->getEnderecoComplemento());
+        $str .= sprintf("Endereï¿½o Bairro: %s<br/>",$this->getEnderecoBairro());
+        $str .= sprintf("Endereï¿½o Municï¿½pio: %s<br/>",$this->getEnderecoMunicipio());
+        $str .= sprintf("Endereï¿½o Estado: %s<br/>",$this->getEnderecoEstado());
+        $str .= sprintf("Endereï¿½o CEP: %s<br/>",$this->getEnderecoCEP());
         $str .= sprintf("Data de Nascimento: %s<br/>",Util::dataSQLParaBr($this->getDataNascimento()));
         $str .= sprintf("Nacionalidade: %s<br/>",$this->getNacionalidade());
         $str .= sprintf("Naturalidade: %s<br/>",$this->getNaturalidade());
@@ -1040,22 +1014,22 @@ class Aluno extends Pessoa {
         $str .= sprintf("E-mail: %s<br/>",$this->getEmail());
 
         // Aluno
-        $str .= sprintf("Nome Mãe: %s<br/>",$this->getNomeMae());
-        $str .= sprintf("RG Mãe: %s<br/>",$this->getRgMae());
+        $str .= sprintf("Nome Mï¿½e: %s<br/>",$this->getNomeMae());
+        $str .= sprintf("RG Mï¿½e: %s<br/>",$this->getRgMae());
         $str .= sprintf("Nome Pai: %s<br/>",$this->getNomePai());
         $str .= sprintf("RG Pai: %s<br/>",$this->getRgPai());
         $str .= sprintf("RG: %s<br/>",$this->getRgNumero());
-        $str .= sprintf("RG Data Emissão: %s<br/>",Util::dataSQLParaBr($this->getRgDataEmissao()));
-        $str .= sprintf("RG Órgão Emissor: %s<br/>",$this->getRgOrgaoEmissor());
+        $str .= sprintf("RG Data Emissï¿½o: %s<br/>",Util::dataSQLParaBr($this->getRgDataEmissao()));
+        $str .= sprintf("RG ï¿½rgï¿½o Emissor: %s<br/>",$this->getRgOrgaoEmissor());
         $str .= sprintf("CPF: %s<br/>",$this->getCpf());
-        $str .= sprintf("CPF Próprio: %s<br/>",$this->getCpfProprio());
-        $str .= sprintf("Cert.Nasc.Número: %s<br/>",$this->getCertidaoNascimentoNumero());
+        $str .= sprintf("CPF Prï¿½prio: %s<br/>",$this->getCpfProprio());
+        $str .= sprintf("Cert.Nasc.Nï¿½mero: %s<br/>",$this->getCertidaoNascimentoNumero());
         $str .= sprintf("Cert.Nasc.Livro: %s<br/>",$this->getCertidaoNascimentoLivro());
         $str .= sprintf("Cert.Nasc.Folha: %s<br/>",$this->getCertidaoNascimentoFolha());
         $str .= sprintf("Cert.Nasc.Cidade: %s<br/>",$this->getCertidaoNascimentoCidade());
         $str .= sprintf("Cert.Nasc.Subdistrito: %s<br/>",$this->getCertidaoNascimentoSubdistrito());
         $str .= sprintf("Cert.Nasc.UF: %s<br/>",$this->getCertidaoNascimentoUF());
-        $str .= sprintf("Cert.Casamento Número: %s<br/>",$this->getCertidaoCasamentoNumero());
+        $str .= sprintf("Cert.Casamento Nï¿½mero: %s<br/>",$this->getCertidaoCasamentoNumero());
         $str .= sprintf("Cert.Casamento Livro: %s<br/>",$this->getCertidaoCasamentoLivro());
         $str .= sprintf("Cert.Casamento Folha: %s<br/>",$this->getCertidaoCasamentoFolha());
         $str .= sprintf("Cert.Casamento Cidade: %s<br/>",$this->getCertidaoCasamentoCidade());
@@ -1064,28 +1038,28 @@ class Aluno extends Pessoa {
         $str .= sprintf("Estab.Curso Origem: %s<br/>",$this->getEstabCursoOrigem());
         $str .= sprintf("Estab.Curso Origem Cidade: %s<br/>",$this->getEstabCursoOrigemCidade());
         $str .= sprintf("Estab.Curso Origem UF: %s<br/>",$this->getEstabCursoOrigemUF());
-        $str .= sprintf("Curso Ano Conclusão: %d<br/>",$this->getCursoOrigemAnoConclusao());
+        $str .= sprintf("Curso Ano Conclusï¿½o: %d<br/>",$this->getCursoOrigemAnoConclusao());
         $str .= sprintf("Modalidade Curso Origem: %s<br/>",$this->getModalidadeCursoOrigem());
         $str .= sprintf("CTPS: %s<br/>",$this->getCtps());
-        $str .= sprintf("Cor/Raça: %s<br/>",$this->getCorRaca());
+        $str .= sprintf("Cor/Raï¿½a: %s<br/>",$this->getCorRaca());
         $str .= sprintf("Estado Civil: %s<br/>",$this->getEstadoCivil());
-        $str .= sprintf("Deficiência Visual: %s<br/>",$this->getDeficienciaVisual());
-        $str .= sprintf("Deficiência Motora: %s<br/>",$this->getDeficienciaMotora());
-        $str .= sprintf("Deficiência Auditiva: %s<br/>",$this->getDeficienciaMotora());
-        $str .= sprintf("Deficiência Mental: %s<br/>",$this->getDeficienciaMental());
-        $str .= sprintf("Responsável Legal: %s<br/>",$this->getResponsavelLegal());
-        $str .= sprintf("RG Responsável: %s<br/>",$this->getRgResponsavel());
-        $str .= sprintf("Título Eleitor Número: %s<br/>",$this->getTituloEleitorNumero());
-        $str .= sprintf("Título Eleitor Data: %s<br/>",Util::dataSQLParaBr($this->getTituloEleitorData()));
-        $str .= sprintf("Título Eleitor Zona: %s<br/>",$this->getTituloEleitorZona());
-        $str .= sprintf("Título Eleitor Seção: %s<br/>",$this->getTituloEleitorSecao());
-        $str .= sprintf("Certif.Alistamento Militar Número: %s<br/>",$this->getCertificadoAlistamentoMilitarNumero());
-        $str .= sprintf("Certif.Alistamento Militar Série: %s<br/>",$this->getCertificadoAlistamentoMilitarSerie());
+        $str .= sprintf("Deficiï¿½ncia Visual: %s<br/>",$this->getDeficienciaVisual());
+        $str .= sprintf("Deficiï¿½ncia Motora: %s<br/>",$this->getDeficienciaMotora());
+        $str .= sprintf("Deficiï¿½ncia Auditiva: %s<br/>",$this->getDeficienciaMotora());
+        $str .= sprintf("Deficiï¿½ncia Mental: %s<br/>",$this->getDeficienciaMental());
+        $str .= sprintf("Responsï¿½vel Legal: %s<br/>",$this->getResponsavelLegal());
+        $str .= sprintf("RG Responsï¿½vel: %s<br/>",$this->getRgResponsavel());
+        $str .= sprintf("Tï¿½tulo Eleitor Nï¿½mero: %s<br/>",$this->getTituloEleitorNumero());
+        $str .= sprintf("Tï¿½tulo Eleitor Data: %s<br/>",Util::dataSQLParaBr($this->getTituloEleitorData()));
+        $str .= sprintf("Tï¿½tulo Eleitor Zona: %s<br/>",$this->getTituloEleitorZona());
+        $str .= sprintf("Tï¿½tulo Eleitor Seï¿½ï¿½o: %s<br/>",$this->getTituloEleitorSecao());
+        $str .= sprintf("Certif.Alistamento Militar Nï¿½mero: %s<br/>",$this->getCertificadoAlistamentoMilitarNumero());
+        $str .= sprintf("Certif.Alistamento Militar Sï¿½rie: %s<br/>",$this->getCertificadoAlistamentoMilitarSerie());
         $str .= sprintf("Certif.Alistamento Militar Data: %s<br/>",Util::dataSQLParaBr($this->getCertificadoAlistamentoMilitarData()));
         $str .= sprintf("Certif.Alistamento Militar RM: %s<br/>",$this->getCertificadoAlistamentoMilitarRM());
         $str .= sprintf("Certif.Alistamento Militar CSM: %s<br/>",$this->getCertificadoAlistamentoMilitarCSM());
-        $str .= sprintf("Certif.Reservista Número: %s<br/>",$this->getCertificadoReservistaNumero());
-        $str .= sprintf("Certif.Reservista Série: %s<br/>",$this->getCertificadoReservistaSerie());
+        $str .= sprintf("Certif.Reservista Nï¿½mero: %s<br/>",$this->getCertificadoReservistaNumero());
+        $str .= sprintf("Certif.Reservista Sï¿½rie: %s<br/>",$this->getCertificadoReservistaSerie());
         $str .= sprintf("Certif.Reservista Data: %s<br/>",Util::dataSQLParaBr($this->getCertificadoReservistaData()));
         $str .= sprintf("Certif.Reservista RM: %s<br/>",$this->getCertificadoReservistaRM());
         $str .= sprintf("Certif.Reservista CSM: %s<br/>",$this->getCertificadoReservistaCSM());

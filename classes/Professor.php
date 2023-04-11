@@ -52,9 +52,9 @@ class Professor extends Pessoa
     }
 
     /**
-     * Obtém um professor dada a matrícula
+     * Obtï¿½m um professor dada a matrï¿½cula
      * @param String $matricula
-     * @return Professor referência ao objeto de professor, ou null, caso não
+     * @return Professor referï¿½ncia ao objeto de professor, ou null, caso nï¿½o
      * exista
      */
     public static function obterProfessorPorMatricula($matricula) {
@@ -81,8 +81,8 @@ class Professor extends Pessoa
 
     /**
      * Retorna os professores vigentes, ou seja, que tenham uma ou
-     * mais matrículas vigentes.
-     * @return array Coleção de objetos de Professor
+     * mais matrï¿½culas vigentes.
+     * @return array Coleï¿½ï¿½o de objetos de Professor
      */
     public static function obterProfessoresVigentes() {
         $con=BD::conectar();
@@ -111,9 +111,9 @@ class Professor extends Pessoa
      /***
      * Retorna a lista de objetos de Pessoa por nome
      *
-     * @result coleção de objetos: Pessoa
+     * @result coleï¿½ï¿½o de objetos: Pessoa
      *
-     * a razão de não utilizar o lista_pessoa() é que o mysqli_real_escape_string
+     * a razï¿½o de nï¿½o utilizar o lista_pessoa() ï¿½ que o mysqli_real_escape_string
      * gera problema com o % do parametro LIKE
      **/
     public static function obterProfessoresPorNome( $nome ) {
@@ -156,7 +156,7 @@ class Professor extends Pessoa
         }
     }
 
-    public static function atualizar( $idPessoa, $titulacaoAcademica,$cvLattes,$nomeGuerra,$corFundo, $con=null ) {
+    public static function atualizarProfessor( $idPessoa, $titulacaoAcademica,$cvLattes,$nomeGuerra,$corFundo, $con=null ) {
         if($con==null) $con = BD::conectar();
         $query = sprintf("UPDATE Professor set
             titulacaoAcademica='%s',
@@ -201,7 +201,7 @@ class Professor extends Pessoa
     public static function getProfessorByIdPessoa($idPessoa) {
 
         $professor = new Professor();
-        //é necessário manter esta ordem para carregar os dados
+        //ï¿½ necessï¿½rio manter esta ordem para carregar os dados
         $professor->carregaDadosProfessor($idPessoa);
         $professor->carregaDadosPessoa($idPessoa);
 
@@ -209,7 +209,7 @@ class Professor extends Pessoa
     }
 
     /**
-     * Gera uma versão legível do estado desse objeto. Usado para inserir
+     * Gera uma versï¿½o legï¿½vel do estado desse objeto. Usado para inserir
      * log de auditoria.
      * @return String
      */
@@ -218,13 +218,13 @@ class Professor extends Pessoa
         // Dados de Pessoa
         $str .= sprintf("Nome: %s<br/>",$this->getNome());
         $str .= sprintf("Sexo: %s<br/>",$this->getSexo());
-        $str .= sprintf("Endereço Logradouro: %s<br/>",$this->getEnderecoLogradouro());
-        $str .= sprintf("Endereço Número: %s<br/>",$this->getEnderecoNumero());
-        $str .= sprintf("Endereço Complemento: %s<br/>",$this->getEnderecoComplemento());
-        $str .= sprintf("Endereço Bairro: %s<br/>",$this->getEnderecoBairro());
-        $str .= sprintf("Endereço Município: %s<br/>",$this->getEnderecoMunicipio());
-        $str .= sprintf("Endereço Estado: %s<br/>",$this->getEnderecoEstado());
-        $str .= sprintf("Endereço CEP: %s<br/>",$this->getEnderecoCEP());
+        $str .= sprintf("Endereï¿½o Logradouro: %s<br/>",$this->getEnderecoLogradouro());
+        $str .= sprintf("Endereï¿½o Nï¿½mero: %s<br/>",$this->getEnderecoNumero());
+        $str .= sprintf("Endereï¿½o Complemento: %s<br/>",$this->getEnderecoComplemento());
+        $str .= sprintf("Endereï¿½o Bairro: %s<br/>",$this->getEnderecoBairro());
+        $str .= sprintf("Endereï¿½o Municï¿½pio: %s<br/>",$this->getEnderecoMunicipio());
+        $str .= sprintf("Endereï¿½o Estado: %s<br/>",$this->getEnderecoEstado());
+        $str .= sprintf("Endereï¿½o CEP: %s<br/>",$this->getEnderecoCEP());
         $str .= sprintf("Data de Nascimento: %s<br/>",Util::dataSQLParaBr($this->getDataNascimento()));
         $str .= sprintf("Nacionalidade: %s<br/>",$this->getNacionalidade());
         $str .= sprintf("Naturalidade: %s<br/>",$this->getNaturalidade());
@@ -234,7 +234,7 @@ class Professor extends Pessoa
         $str .= sprintf("E-mail: %s<br/>",$this->getEmail());
 
         // Professor
-        $str .= sprintf("Titulação : %s<br/>",$this->getTitulacaoAcademica());
+        $str .= sprintf("Titulaï¿½ï¿½o : %s<br/>",$this->getTitulacaoAcademica());
         $str .= sprintf("Lattes :%s<br/>",$this->getCvLattes());
         $str .= sprintf("Nome de Guerra : %s<br/>",$this->getNomeGuerra());
         $str .= sprintf("Cor : %s<br/>",$this->getCorFundo());

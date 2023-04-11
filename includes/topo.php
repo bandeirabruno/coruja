@@ -111,7 +111,7 @@
 
     <div id="topo">
         <?php
-        // PEGA O NOME DE USUÁRIO E IDPESSOA DO USUÁRIO LOGADO
+        // PEGA O NOME DE USUï¿½RIO E IDPESSOA DO USUï¿½RIO LOGADO
         $login = $_SESSION["login"];
         $nomeAcesso = $login->getNomeAcesso();
         $loginEmail = $login->getEmail();
@@ -154,7 +154,7 @@
        
         <?php
         
-        // EXIBE A FOTO DO USUÁRIO
+        // EXIBE A FOTO DO USUï¿½RIO
         echo "<div class='usuariologado_foto'>";
         echo "<img src='/coruja/baseCoruja/controle/obterFotoLogado_controle.php' width='100' height='90' border=0 alt='$nomeAcesso' />";
         echo "</div>";

@@ -7,7 +7,7 @@ $idPessoa = $_REQUEST["idPessoa"];
 $login = Login::obterLoginPorIdPessoa($idPessoa);
        
 if( $login==null || $login->getFoto() == null ) {
-    readfile("$BASE_DIR/imagens/sem_foto.jpg");
+    readfile("$BASE_DIR/imagens/sem_foto.png");
 } else {
     echo $login->getFoto();
 }

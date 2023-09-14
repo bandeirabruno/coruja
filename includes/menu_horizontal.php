@@ -1,6 +1,6 @@
 <?php
     if( ($login==null) || !isset($login) ) {
-        trigger_error("Não foi possível identificar o login autenticado.",E_USER_ERROR);
+        trigger_error("Nï¿½o foi possï¿½vel identificar o login autenticado.",E_USER_ERROR);
     }
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light ">
@@ -15,7 +15,7 @@
             if( $login->getPerfil() == Login::ADMINISTRADOR ) {
         ?>
         <li class="nav-item mr-3">
-            <a class="nav-link" href="/coruja/baseCoruja/index.php">Início</a>
+            <a class="nav-link" href="/coruja/baseCoruja/index.php">Inï¿½cio</a>
         </li>
         <li class="nav-item mr-3 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,10 +24,10 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
                 <a class="dropdown-item" href="/coruja/baseCoruja/controle/manterAluno_controle.php?acao=consultar">Aluno</a>
-                <a class="dropdown-item" href="/coruja/interno/manter_situacao_matricula/manterSituacaoMatricula_controle.php?acao=selecionarCurso">Administrar Matrículas</a>
-                <a class="dropdown-item" id="linkMenuPeriodoLetivo" href="/coruja/siro/controle/PeriodoLetivo_controle.php?action=curso">Período Letivo</a>
+                <a class="dropdown-item" href="/coruja/interno/manter_situacao_matricula/manterSituacaoMatricula_controle.php?acao=selecionarCurso">Administrar Matrï¿½culas</a>
+                <a class="dropdown-item" id="linkMenuPeriodoLetivo" href="/coruja/siro/controle/PeriodoLetivo_controle.php?action=curso">Perï¿½odo Letivo</a>
                 <a class="dropdown-item" href="/coruja/interno/selecionar_matricula_professor/selecionarMatricula_controle.php?acao=exibirFiltroPesquisa">Professor</a>
-                <a class="dropdown-item" href="/coruja/interno/manter_espaco/manterEspaco_controle.php?acao=listar">Espaço</a>
+                <a class="dropdown-item" href="/coruja/interno/manter_espaco/manterEspaco_controle.php?acao=listar">Espaï¿½o</a>
                 <a class="dropdown-item" href="/coruja/interno/manter_tipocurso/manterTpcurso_controle.php?acao=listar">Tipo de Curso</a>
                 <a class="dropdown-item" href="/coruja/interno/manter_curso/manterCurso_controle.php?acao=listar">Curso</a>
 
@@ -35,21 +35,21 @@
       </li>
       <li class="nav-item mr-3 dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Emissão
+            Emissï¿½o
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/coruja/nort/controle/emitirDiarioDeClasse_controle.php">Diário de Classe</a>
-            <a class="dropdown-item" href="/coruja/interno/emitir_grade_horario/GradeHorario_controle.php">Grade de Horário</a>
-            <a class="dropdown-item" href="/coruja/nort/controle/emitirHistoricoEscolar_controle.php?acao=buscarMatricula">Histórico Escolar</a>
-            <a class="dropdown-item" href="/coruja/interno/emitir_hist_concl_controle/emitirHistConcl_controle.php?action=consultar">Histórico de Concluído</a>
-            <a class="dropdown-item" href="/coruja/interno/emitir_ocupacao_espelho/emitirOcupacaoEspelho_controle.php?acao=emitirEspaco">Espelho de Ocupação de Espaço</a>
-            <a class="dropdown-item" href="/coruja/nort/controle/emitirRelatorioDeAlunosPorSituacao_controle.php">Alunos Por Situação</a>
+            <a class="dropdown-item" href="/coruja/nort/controle/emitirDiarioDeClasse_controle.php">Diï¿½rio de Classe</a>
+            <a class="dropdown-item" href="/coruja/interno/emitir_grade_horario/GradeHorario_controle.php">Grade de Horï¿½rio</a>
+            <a class="dropdown-item" href="/coruja/nort/controle/emitirHistoricoEscolar_controle.php?acao=buscarMatricula">Histï¿½rico Escolar</a>
+            <a class="dropdown-item" href="/coruja/interno/emitir_hist_concl_controle/emitirHistConcl_controle.php?action=consultar">Histï¿½rico de Concluï¿½do</a>
+            <a class="dropdown-item" href="/coruja/interno/emitir_ocupacao_espelho/emitirOcupacaoEspelho_controle.php?acao=emitirEspaco">Espelho de Ocupaï¿½ï¿½o de Espaï¿½o</a>
+            <a class="dropdown-item" href="/coruja/nort/controle/emitirRelatorioDeAlunosPorSituacao_controle.php">Alunos Por Situaï¿½ï¿½o</a>
             <a class="dropdown-item" href="/coruja/nort/controle/emitirListaDeAlunosPorTurma_controle.php">Lista de Alunos Por Turma</a>
-            <a class="dropdown-item" href="/coruja/nort/controle/emitirFichaDeMatricula_controle.php?acao=buscarMatricula">Ficha de Matrícula</a>
+            <a class="dropdown-item" href="/coruja/nort/controle/emitirFichaDeMatricula_controle.php?acao=buscarMatricula">Ficha de Matrï¿½cula</a>
             <a class="dropdown-item" href="/coruja/interno/exportar_dados_carteira/exportarDadosCarteira_controle.php">Exportar Dados para Carteira de Estudante</a>
-            <a class="dropdown-item" href="/coruja/interno/alocacao_professor/emitirAlocacao_professor_controle.php?action=AlocacaoProfessor">Alocação de Professor</a>
-            <a class="dropdown-item" href="/coruja/interno/resumo_alocacao_professor/emitirResumoAlocacao_professor_controle.php?action=ResumoAlocacaoProfessor">Resumo de Alocação de Professores</a>
-            <a class="dropdown-item" href="/coruja/interno/emitir_decl_matr_aluno/emitirDeclMatrAluno_controle.php">Declaração de Matrícula</a>
+            <a class="dropdown-item" href="/coruja/interno/alocacao_professor/emitirAlocacao_professor_controle.php?action=AlocacaoProfessor">Alocaï¿½ï¿½o de Professor</a>
+            <a class="dropdown-item" href="/coruja/interno/resumo_alocacao_professor/emitirResumoAlocacao_professor_controle.php?action=ResumoAlocacaoProfessor">Resumo de Alocaï¿½ï¿½o de Professores</a>
+            <a class="dropdown-item" href="/coruja/interno/emitir_decl_matr_aluno/emitirDeclMatrAluno_controle.php">Declaraï¿½ï¿½o de Matrï¿½cula</a>
         </div>
       </li>
       <li class="nav-item mr-3 dropdown">
@@ -58,28 +58,28 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/coruja/nort/controle/manterTurmas_controle.php">Manter Turmas</a>
-            <a class="dropdown-item" href="/coruja/nort/controle/lancarNotas_controle.php">Lançar Notas</a>
+            <a class="dropdown-item" href="/coruja/nort/controle/lancarNotas_controle.php">Lanï¿½ar Notas</a>
             <a class="dropdown-item" href="/coruja/siro/controle/ManterAlunosQueCursamTurma_controle.php?act=main" id="manter_alunos_que_cursam_uma_turma">Manter Alunos que cursam uma Turma</a>
         </div>
       </li>
       <li class="nav-item mr-3 dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Inscrições
+        Inscriï¿½ï¿½es
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="/coruja/siro/controle/ExibirResultadoSolicitacaoInscricao_controle.php?act=main">Exibir Resultado da Solicitação de Inscrição</a>
-            <a class="dropdown-item" href="/coruja/siro/controle/SolicitarInscricaoEmTurmas_controle.php?act=main">Solicitar Inscrição em Turma</a>
-            <a class="dropdown-item" href="/coruja/siro/controle/ManterSituacaoInscricaoTurma_controle.php?action=curso">Situação de Inscrições em Turmas</a>
+            <a class="dropdown-item" href="/coruja/siro/controle/ExibirResultadoSolicitacaoInscricao_controle.php?act=main">Exibir Resultado da Solicitaï¿½ï¿½o de Inscriï¿½ï¿½o</a>
+            <a class="dropdown-item" href="/coruja/siro/controle/SolicitarInscricaoEmTurmas_controle.php?act=main">Solicitar Inscriï¿½ï¿½o em Turma</a>
+            <a class="dropdown-item" href="/coruja/siro/controle/ManterSituacaoInscricaoTurma_controle.php?action=curso">Situaï¿½ï¿½o de Inscriï¿½ï¿½es em Turmas</a>
         </div>
       </li>
       <li class="nav-item mr-3 dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Permissões
+        Permissï¿½es
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" href="/coruja/mmc_gpl/manterPermissao/grupoPermissoes_controle.php">Grupos</a>
-            <a class="dropdown-item" href="/coruja/mmc_gpl/manterPermissao/buscarFuncionario_controle.php">Permissões</a>
-            <a class="dropdown-item" href="/coruja/mmc_gpl/manterPermissao/gerenciaLog_controle.php">Gerência de Log</a>
+            <a class="dropdown-item" href="/coruja/mmc_gpl/manterPermissao/buscarFuncionario_controle.php">Permissï¿½es</a>
+            <a class="dropdown-item" href="/coruja/mmc_gpl/manterPermissao/gerenciaLog_controle.php">Gerï¿½ncia de Log</a>
         </div>
       </li>
       <li class="nav-item mr-3 dropdown">
@@ -95,33 +95,33 @@
         } else if( $login->getPerfil() == Login::ALUNO ) {
     ?>
         <li class="nav-item mr-3">
-            <a class="nav-link" href="/coruja/baseCoruja/index.php">Início</a>
+            <a class="nav-link" href="/coruja/baseCoruja/index.php">Inï¿½cio</a>
         </li>
         <li class="nav-item mr-3 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Inscrição
+            Inscriï¿½ï¿½o
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/coruja/siro/controle/SolicitarInscricaoEmTurmas_controle.php?action=listar">Solicitar Inscrição</a>
-                <a class="dropdown-item" href="/coruja/siro/controle/EmitirGradeHoraria_controle.php">Emitir Grade Horária do Período Vigente</a>
+                <a class="dropdown-item" href="/coruja/siro/controle/SolicitarInscricaoEmTurmas_controle.php?action=listar">Solicitar Inscriï¿½ï¿½o</a>
+                <a class="dropdown-item" href="/coruja/siro/controle/EmitirGradeHoraria_controle.php">Emitir Grade Horï¿½ria do Perï¿½odo Vigente</a>
             </div>
         </li>
         <li class="nav-item mr-3 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Matrícula
+            Matrï¿½cula
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/coruja/nort/controle/emitirFichaDeMatricula_controle.php?acao=gerarPDFproprioAluno">Ficha de Matrícula</a>
+                <a class="dropdown-item" href="/coruja/nort/controle/emitirFichaDeMatricula_controle.php?acao=gerarPDFproprioAluno">Ficha de Matrï¿½cula</a>
             </div>
         </li>
         <li class="nav-item mr-3 dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Emissões
+            Emissï¿½es
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 
                 <a class="dropdown-item" href="/coruja/web/alunos/carteirinha/carteirinha_controller.php?acao=exibir">Carteirinha</a>
-                <a class="dropdown-item" href="/coruja/interno/emitir_decl_matr_aluno/emitirDeclMatrAluno_controle.php?acao=exibirResumo&matriculaAluno=<?php echo $login->getNomeAcesso(); ?>">Declaração de Matrícula</a>
+                <a class="dropdown-item" href="/coruja/interno/emitir_decl_matr_aluno/emitirDeclMatrAluno_controle.php?acao=exibirResumo&matriculaAluno=<?php echo $login->getNomeAcesso(); ?>">Declaraï¿½ï¿½o de Matrï¿½cula</a>
             
             </div>
         </li>
@@ -129,7 +129,7 @@
         } else if( $login->getPerfil() == Login::PROFESSOR) {
     ?>
     <li class="nav-item mr-3">
-        <a class="nav-link" href="/coruja/espacoProfessor/index_controle.php?acao=exibirIndex">Início</a>
+        <a class="nav-link" href="/coruja/espacoProfessor/index_controle.php?acao=exibirIndex">Inï¿½cio</a>
     </li>
      
     <?php

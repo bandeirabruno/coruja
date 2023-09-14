@@ -1,7 +1,7 @@
 <?php
     require_once("$BASE_DIR/includes/topo.php");
     echo '<div id="menuprincipal">';
-    require_once("$BASE_DIR/includes/menu_horizontal.php");
+    require_once("$BASE_DIR/includes/menu_lateral.php");
     echo '</div>';
     echo '<div id="conteudo">';
 ?>
@@ -17,6 +17,7 @@
         });
     </script>
 
+<link href="../estilos/style4.css" rel="stylesheet" type="text/css" />
     <form id="cadastro" method="post" name="cadastro" action="/coruja/baseCoruja/controle/manterAluno_controle.php">
 
         <fieldset id="fieldsetGeral">

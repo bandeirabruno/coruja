@@ -1,6 +1,6 @@
 <?php 
-    /*	Lê definição das classes
-        Atenção: a definição das classes devem ser carregadas antes da recuperação dos dados da sessão
+    /*	Lï¿½ definiï¿½ï¿½o das classes
+        Atenï¿½ï¿½o: a definiï¿½ï¿½o das classes devem ser carregadas antes da recuperaï¿½ï¿½o dos dados da sessï¿½o
         BUG documentado em http://www.webdeveloper.com/forum/showthread.php?t=144267
     */
     require_once "../includes/comum.php";
@@ -9,7 +9,7 @@
     require_once "$BASE_DIR/classes/Pessoa.php";
     require_once "$BASE_DIR/classes/MatriculaAluno.php";
     
-    // Obtem a ação
+    // Obtem a aï¿½ï¿½o
     $acao = filter_input( INPUT_GET, "acao", FILTER_SANITIZE_STRING);
     if( $acao === null)
     {
@@ -29,7 +29,7 @@
     } 
     else if( $acao === "autenticar" ) 
     {
-        // Garante que uma nova sessão será iniciada
+        // Garante que uma nova sessï¿½o serï¿½ iniciada
         session_unset();
         session_destroy();
         session_start();
@@ -39,7 +39,7 @@
         $senha = filter_input(INPUT_POST, "senha");
         $perfil = filter_input(INPUT_POST, "perfil");
 
-        // Cria objeto de sessão novo
+        // Cria objeto de sessï¿½o novo
         try 
         {
             $_SESSION["login"] = Login::autenticar( $nomeAcesso, $senha, $perfil);
@@ -51,12 +51,12 @@
             exit;            
         }
 
-        // Recupera o login da sessão
+        // Recupera o login da sessï¿½o
         $login = $_SESSION["login"];
 
-        Log::incluirLogVali($login->getIdPessoa(),'UC00.01.00','');
+        //Log::incluirLogVali($login->getIdPessoa(),'UC00.01.00','');
 
-        // Verifica se há filtro de curso configura
+        // Verifica se hï¿½ filtro de curso configura
         $siglaCursoFiltro = filter_input( INPUT_COOKIE, "siglaCursoFiltro", 
                 FILTER_SANITIZE_STRING);
         if( $siglaCursoFiltro !== null)
@@ -64,12 +64,12 @@
             $_SESSION["siglaCursoFiltro"] = $siglaCursoFiltro;
         }
 
-        // Se não houver registro de log a conferir, desvia logo para página principal
+        // Se nï¿½o houver registro de log a conferir, desvia logo para pï¿½gina principal
         $listaLogNaoConferidos = $login->getLogsNaoConferidos();
 
         $idPessoa = $login->getIdPessoa();
 
-        // Salva dados de autentição em cookie
+        // Salva dados de autentiï¿½ï¿½o em cookie
         setcookie( "perfil", $login->getPerfil(), time()+60*60*24*30 );
 
         if( empty( $listaLogNaoConferidos)) 
@@ -84,7 +84,7 @@
     } 
     else if( $acao === "validarLog") 
     {
-        // Restaura o usuário logado na sessão
+        // Restaura o usuï¿½rio logado na sessï¿½o
         $login = $_SESSION["login"];
         if( !isset( $login))
         {
@@ -92,10 +92,10 @@
             exit;
         }
 
-        // Obtem a lista de registros de logs conferidos pelo usuário preenchidos no formulário
+        // Obtem a lista de registros de logs conferidos pelo usuï¿½rio preenchidos no formulï¿½rio
         $listaConfere = $_POST[ "confere"];
 
-        // Registra como aceito todos os registros de log conferidos pelo usuário
+        // Registra como aceito todos os registros de log conferidos pelo usuï¿½rio
         if( isset($listaConfere) ) 
         {
             foreach( $listaConfere as $idLog) 
@@ -107,16 +107,16 @@
             }
         }
 
-        // Verifica se usuário aceitou todos os logs realizados na conta dele
+        // Verifica se usuï¿½rio aceitou todos os logs realizados na conta dele
         $listaLogNaoConferidos = $login->getLogsNaoConferidos();
-        if( !empty($listaLogNaoConferidos)) // Se o usuário ainda não aceitou todos os logs
+        if( !empty($listaLogNaoConferidos)) // Se o usuï¿½rio ainda nï¿½o aceitou todos os logs
         { 
-                $erro = "Você deve aceitar todos os registros para continuar!";
+                $erro = "Vocï¿½ deve aceitar todos os registros para continuar!";
                 require("$BASE_DIR/autenticar/validarLogForm.php");
                 exit;
         }
         else 
-        { // Usuário aceitou todos os logs.
+        { // Usuï¿½rio aceitou todos os logs.
             encaminharPaginaInicialPerfil( $login->getPerfil() );
         }
     } 
@@ -133,7 +133,7 @@
 
         try 
         {
-            //Se login retornar null o usuário informou o nome de acesso errado.
+            //Se login retornar null o usuï¿½rio informou o nome de acesso errado.
             $login = Login::obterLoginPorNomeAcesso( $nomeAcesso);
 
             try
@@ -152,15 +152,15 @@
             }
             catch (\Throwable $ex)
             {
-                throw new Exception("Nome de acesso e/ou email não conferem.
-                Se você tem certeza que está digitando corretamente seus dados,
-                procure a secretaria para providenciar as correções.");
+                throw new Exception("Nome de acesso e/ou email nï¿½o conferem.
+                Se vocï¿½ tem certeza que estï¿½ digitando corretamente seus dados,
+                procure a secretaria para providenciar as correï¿½ï¿½es.");
 
             }
             
             if( $login->isBloqueado() ) 
             {
-                throw new Exception( sprintf("Usuário '%s' está bloqueado. Procure o administrador do sistema.", 
+                throw new Exception( sprintf("Usuï¿½rio '%s' estï¿½ bloqueado. Procure o administrador do sistema.", 
                         $login->getNomeAcesso() ) );
             }
             
@@ -172,7 +172,7 @@
             exit;
         }
 
-        //Recuperação por data de nascimento desativada
+        //Recuperaï¿½ï¿½o por data de nascimento desativada
         //require_once "$BASE_DIR/autenticar/recuperarSenhaConfirmaEmail.php";
        // exit;
 
@@ -180,7 +180,7 @@
             Login::recuperarSenha($idPessoa,$nomeAcesso);
         } catch(Exception $ex) {
             $msg = $ex->getMessage();
-            $erro = "Erro na operação. Mensagem: $msg";
+            $erro = "Erro na operaï¿½ï¿½o. Mensagem: $msg";
             require_once "$BASE_DIR/autenticar/recuperarSenhaForm.php";
             exit;
         }
@@ -200,7 +200,7 @@
             Login::recuperarSenha($idPessoa,$nomeAcesso);
         } catch(Exception $ex) {
             $msg = $ex->getMessage();
-            $erro = "Erro na operação. Mensagem: $msg";
+            $erro = "Erro na operaï¿½ï¿½o. Mensagem: $msg";
             require_once "$BASE_DIR/autenticar/recuperarSenhaConfirmaEmail.php";
             exit;
         }
@@ -220,7 +220,7 @@
         if( $perfil == Login::PROFESSOR ) {
             header("Location: /coruja/espacoProfessor/index_controle.php?acao=exibirIndex");
         } else {
-            // Encaminha para a página índice do Coruja
+            // Encaminha para a pï¿½gina ï¿½ndice do Coruja
             header("Location: /coruja/baseCoruja/index.php");
         }
     }

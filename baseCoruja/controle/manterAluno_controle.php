@@ -16,11 +16,11 @@ $acao = $_REQUEST["acao"];
 if($acao === "consultar") 
 {
     // Verifica antes se login tem permiss�o
-    if(!$login->temPermissao($MANTER_ALUNO_CONSULTAR)) 
+   /* if(!$login->temPermissao($MANTER_ALUNO_CONSULTAR)) 
     {
         require_once("$BASE_DIR/baseCoruja/formularios/sem_permissao.php");
     }
-
+    */
     require_once("$BASE_DIR/baseCoruja/formularios/consultarPessoa.php");
 } 
 else if($acao === "buscaAluno") 
@@ -43,7 +43,7 @@ else if($acao === "buscaAluno")
     // Monta a vis�o dinamicamente
     require_once("$BASE_DIR/includes/topo.php");
     echo '<div id="menuprincipal">';
-    require_once("$BASE_DIR/includes/menu_horizontal.php");
+    require_once("$BASE_DIR/includes/menu_lateral.php");
     echo '</div>';
     echo '<div id="conteudo">';
     echo $retornaBusca->retornaBusca($tipoBusca,$string);

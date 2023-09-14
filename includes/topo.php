@@ -123,10 +123,8 @@
             $cursoFiltro = $_SESSION["siglaCursoFiltro"];
         }
         ?>
-        <div id="topo_instituicao" style="float: left; padding-left: 100px; padding-top: 20px;">
-            <img src="/coruja/imagens/logorj.jpg" />
-        </div>
-        <div id="nome_instituicao" style="text-align: left; padding-top: 50px;">
+        
+        <div id="nome_instituicao" style="text-align: left; padding-left: 100px; padding-top: 50px;">
             <span>&nbsp;&nbsp;<?php echo Config::INSTITUICAO_NOME_COMPLETO; ?></span>
         </div>
 

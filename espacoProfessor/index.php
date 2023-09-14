@@ -34,7 +34,7 @@ require_once "$BASE_DIR/includes/menu_horizontal.php";
         <?php 
         if( count($turmas) == 0 ) {
         ?>
-        <span>Nenhuma turma dispon&iacute;vel.</span><img src="/coruja/imagens/comment_icon.png" title="Somente turmas confirmadas são exibidas nessa lista."/>
+        <span>Nenhuma turma dispon&iacute;vel.</span><img src="/coruja/imagens/comment_icon.png" title="Somente turmas confirmadas sï¿½o exibidas nessa lista."/>
         <?php 
         } else {
             foreach ($turmas as $turma) { ?>
@@ -57,7 +57,7 @@ require_once "$BASE_DIR/includes/menu_horizontal.php";
                 <?php } else { ?>
                 &nbsp;<img src="/coruja/imagens/comment_icon.png" title="Pauta liberada para a secretaria. Se deseja retificar, solicite &agrave; secretaria a devolu&ccedil;&atilde;o."/>
                 <?php } ?>
-                <input id="gerarPauta" type="button" value="Gerar Pauta" title="Gerar em PDF a pauta já liberada" onclick="gerarPauta(<?php echo $turma->getIdTurma(); ?>);" />
+                <input id="gerarPauta" type="button" value="Gerar Pauta" title="Gerar em PDF a pauta jï¿½ liberada" onclick="gerarPauta(<?php echo $turma->getIdTurma(); ?>);" />
         </ul>
 
         <?php 

@@ -100,7 +100,7 @@ class Login
     /**
      * Obtem um objeto de Login pelo idPessoa
      * @param integer $idPessoa
-     * @return Login Objeto de login, ou null, se não encontrar
+     * @return Login Objeto de login, ou null, se nï¿½o encontrar
      */
     public static function obterLoginPorIdPessoa( $idPessoa) 
     {
@@ -185,7 +185,7 @@ class Login
      * @param <type> $idPessoa
      * @param <type> $nomeAcesso
      * @param <type> $senha senha sugerida pelo sistema
-     * @param <type> $con opcional, conexão externa usada na transação
+     * @param <type> $con opcional, conexï¿½o externa usada na transaï¿½ï¿½o
      */
     public static function criarLogin($idPessoa, $nomeAcesso, $senha, $con=null) 
     {
@@ -206,7 +206,7 @@ class Login
     {
 
         if($con==null) { $con=BD::conectar(); }
-        $query=sprintf("update Login set senha='%s',bloqueado='NÃO' where idPessoa=%d and nomeAcesso='%s'",
+        $query=sprintf("update Login set senha='%s',bloqueado='Nï¿½O' where idPessoa=%d and nomeAcesso='%s'",
             md5(mysqli_real_escape_string($con, $novaSenha)),
             $idPessoa,
             mysqli_real_escape_string(BD::conectar(), $nomeAcesso));
@@ -242,12 +242,12 @@ class Login
                 mysqli_real_escape_string(BD::conectar(), $nomeAcesso));
 
         try {
-            BD::mysqli_query("BEGIN"); // Inicia transação
+            BD::mysqli_query("BEGIN"); // Inicia transaï¿½ï¿½o
 
             // Atualiza senha
             $result=BD::mysqli_query($query);
             if(!$result) {
-                throw new Exception("Não foi possível resetar a senha do usuário.");
+                throw new Exception("Nï¿½o foi possï¿½vel resetar a senha do usuï¿½rio.");
             }
 
             $pessoa = Pessoa::obterPessoaPorId($idPessoa);
@@ -256,10 +256,10 @@ class Login
             $nome = $pessoa->getNome();
             $texto = "Prezado(a) $nome, \n\n
                 Sua conta $nomeAcesso no sistema Coruja foi resetada.\n
-                Sua nova senha é $senha\n
-                É fortemente recomendado que você a altere o mais rápido possível. 
-                Caso não tenha sido você a solicitar essa operação, 
-                comunique imediatamente à instituição.";
+                Sua nova senha ï¿½ $senha\n
+                ï¿½ fortemente recomendado que vocï¿½ a altere o mais rï¿½pido possï¿½vel. 
+                Caso nï¿½o tenha sido vocï¿½ a solicitar essa operaï¿½ï¿½o, 
+                comunique imediatamente ï¿½ instituiï¿½ï¿½o.";
             Util::enviarEmail($email,$assunto,$texto);
 
             BD::mysqli_query("COMMIT");
@@ -297,7 +297,7 @@ class Login
         {
             $con = BD::conectar();
         }
-        $query = sprintf("update Login set bloqueado='NÃO', motivoBloqueio=null where " .
+        $query = sprintf("update Login set bloqueado='Nï¿½O', motivoBloqueio=null where " .
                 "nomeAcesso='%s'",
                 mysqli_real_escape_string(BD::conectar(), $nomeAcesso) );
         $result = BD::mysqli_query( $query);
@@ -313,7 +313,7 @@ class Login
     }
     
     /**
-     * Retorna a quantidade de avisos que ainda não foram
+     * Retorna a quantidade de avisos que ainda nï¿½o foram
      * lidos (dado aceite) por este login.
      */
     public function obterQtdeAvisosNaoLidos() 
@@ -321,13 +321,13 @@ class Login
         $con = BD::conectar();
         $query = sprintf("select count(*) from MensagemPessoa 
             where idPessoa = %d and
-            lido='NÃO'", $this->pessoa->getIdPessoa());
+            lido='Nï¿½O'", $this->pessoa->getIdPessoa());
         $result = BD::mysqli_query($query);
         return BD::mysqli_result($result, 0, 0);
     }    
     
     /**
-    * Obtem todos os registros de Logs deste usuário ainda não conferidos
+    * Obtem todos os registros de Logs deste usuï¿½rio ainda nï¿½o conferidos
     */
     public function getLogsNaoConferidos() 
     {
@@ -345,8 +345,8 @@ class Login
     }
     
     /**
-    * Retorna um booleano indicado se, para um dado código de caso de uso,
-    * o login tem ou não permissão de uso.
+    * Retorna um booleano indicado se, para um dado cï¿½digo de caso de uso,
+    * o login tem ou nï¿½o permissï¿½o de uso.
     */
     public function temPermissao( $idCasoUso) 
     {
@@ -361,7 +361,7 @@ class Login
     }
 
     /**
-    * Registra o confere por parte do usuário sobre um registro de Log
+    * Registra o confere por parte do usuï¿½rio sobre um registro de Log
     */
     public function incluirLog($idCasoUso,$descricao,$con=null) 
     {
@@ -380,14 +380,14 @@ class Login
         $result = mysqli_query($con, $query);
         if( (!$result) || mysqli_affected_rows($con)==0 ) 
         {
-            throw new Exception("Não foi possível alterar a senha. Verifique se a senha atual está correta.");
+            throw new Exception("Nï¿½o foi possï¿½vel alterar a senha. Verifique se a senha atual estï¿½ correta.");
         }
     }
     
     /**
-     * Retorna um valor lógico indicado se o login
-     * autenticado é aluno ou não. Confere se ele tem matrícula
-     * e não tem nenhum permissão.
+     * Retorna um valor lï¿½gico indicado se o login
+     * autenticado ï¿½ aluno ou nï¿½o. Confere se ele tem matrï¿½cula
+     * e nï¿½o tem nenhum permissï¿½o.
      */
     public function isAluno() 
     {
@@ -395,8 +395,8 @@ class Login
     }
 
     /**
-     * Retorna um valor lógico indicado se o usuário
-     * autenticado é administrador ou não.
+     * Retorna um valor lï¿½gico indicado se o usuï¿½rio
+     * autenticado ï¿½ administrador ou nï¿½o.
      */
     public function isAdministrador() 
     {
@@ -404,8 +404,8 @@ class Login
     }
     
     /**
-     * Retorna um valor lógico indicado se o usuário
-     * autenticado é professor ou não. Confere se ele tem matrícula vigente.
+     * Retorna um valor lï¿½gico indicado se o usuï¿½rio
+     * autenticado ï¿½ professor ou nï¿½o. Confere se ele tem matrï¿½cula vigente.
      */
     public function isProfessor() 
     {
@@ -422,7 +422,7 @@ class Login
      * @param string $senha
      * @param string $perfil
      * @return Login se autenticado
-     * @throws Exception se não pôde autenticar
+     * @throws Exception se nï¿½o pï¿½de autenticar
      */
     public static function autenticar( $nomeAcesso , $senha, $perfil) 
     {
@@ -445,7 +445,7 @@ class Login
                     Login::bloquearLogin( $nomeAcesso, $con);
                     Login::registrarLoginErro("Login existente "
                         . "$nomeAcesso tentou autenticar com perfil $perfil "
-                            . "e falhou auntenticação mais do que 3 vezes. "
+                            . "e falhou auntenticaï¿½ï¿½o mais do que 3 vezes. "
                             . "Login foi bloqueado.", $con);
                     throw new Exception("Conta bloqueada. Procure a secretaria.");
                 }
@@ -465,7 +465,7 @@ class Login
             {
                 Login::registrarLoginErro("Login existente "
                     . "$nomeAcesso tentou autenticar com perfil $perfil "
-                        . "mas está bloqueado.", $con);
+                        . "mas estï¿½ bloqueado.", $con);
                 $motivoBloqueio = BD::mysqli_result( $result,0,3);
                 throw new Exception( sprintf("Conta %s bloqueada. Motivo: %s", 
                         $nomeAcesso,
@@ -479,7 +479,7 @@ class Login
                 {
                     Login::registrarLoginErro("Login existente "
                         . "$nomeAcesso tentou autenticar com perfil $perfil "
-                        . "mesmo não o possuindo.", $con);
+                        . "mesmo nï¿½o o possuindo.", $con);
                     Login::incrementarErrosAutenticacao( $nomeAcesso, $con);
                     Login::lancarErroGenericoAutenticacao();
                 }
@@ -512,8 +512,8 @@ class Login
     
     private static function lancarErroGenericoAutenticacao()
     {
-        throw new Exception("Nome acesso, senha e ou perfil não conferem. "
-                . "Sua conta será bloqueada após 3 erros.");
+        throw new Exception("Nome acesso, senha e ou perfil nï¿½o conferem. "
+                . "Sua conta serï¿½ bloqueada apï¿½s 3 erros.");
     }
 
     private static function registrarLoginErro( $msg, $con)
@@ -550,7 +550,7 @@ class Login
     /**
      * Muda o perfil do login
      * @param String $perfil
-     * @return boolean indica se mudou com sucesso ou não
+     * @return boolean indica se mudou com sucesso ou nï¿½o
      */
     private function mudarPerfil( $perfil ) 
     {
@@ -573,9 +573,9 @@ class Login
     }
 
     /**
-     * Retorna um valor lógico indicado se o usuário
-     * autenticado é aluno ou não. Confere se ele tem matrícula
-     * e não tem nenhum permissão.
+     * Retorna um valor lï¿½gico indicado se o usuï¿½rio
+     * autenticado ï¿½ aluno ou nï¿½o. Confere se ele tem matrï¿½cula
+     * e nï¿½o tem nenhum permissï¿½o.
      */
     private function isPerfilAluno() {
         $con = BD::conectar();
@@ -595,8 +595,8 @@ class Login
     }
 
     /**
-     * Retorna um valor lógico indicado se o usuário
-     * autenticado é professor ou não. Confere se ele tem matrícula vigente.
+     * Retorna um valor lï¿½gico indicado se o usuï¿½rio
+     * autenticado ï¿½ professor ou nï¿½o. Confere se ele tem matrï¿½cula vigente.
      */
     private function isPerfilProfessor() 
     {
@@ -616,8 +616,8 @@ class Login
     }
 
     /**
-     * Retorna um valor lógico indicado se o usuário
-     * autenticado é administrador ou não.
+     * Retorna um valor lï¿½gico indicado se o usuï¿½rio
+     * autenticado ï¿½ administrador ou nï¿½o.
      */
     private function isPerfilAdministrador() 
     {
@@ -637,7 +637,7 @@ class Login
     }
     
     /**
-    * Registra o confere por parte do usuário sobre um registro de Log
+    * Registra o confere por parte do usuï¿½rio sobre um registro de Log
     */
     public function aceitarLog( $idCasoUso, $dataHora) 
     {
